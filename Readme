@@ -1,51 +1,57 @@
-# 📊 Telco Customer Churn (TCA)
+# 📉 Customer Churn Analysis
 
-A complete end-to-end data science project analyzing Telco customer behavior to uncover churn patterns and predict customer attrition using machine learning models.
+This project explores patterns in customer behavior to identify why users leave (churn). By analyzing key trends across demographics, services, and payment details, this project provides insights businesses can use to improve retention.
 
 ---
 
 ## 📂 Dataset Overview
 
-- **Rows / Columns:** 7,048 × 21  
-- **Target Variable:** `Churn` (Yes / No)  
-- **Feature Categories:**
-  - **Demographics:** `gender`, `SeniorCitizen`, `Partner`, `Dependents`
-  - **Account Info:** `tenure`, `Contract`, `PaperlessBilling`, `PaymentMethod`
-  - **Services Used:** `PhoneService`, `InternetService`, `Streaming*`, `OnlineSecurity`, ...
-  - **Financial:** `MonthlyCharges`, `TotalCharges`
+- **Total Records:** ~7,000
+- **Target Column:** `Churn` (Yes / No)
+- **Key Features:**
+  - **Demographics:** Gender, Senior Citizen, Partner, Dependents
+  - **Account Details:** Tenure, Contract, Paperless Billing, Payment Method
+  - **Services Used:** Phone, Internet, Streaming, OnlineSecurity, TechSupport
+  - **Charges:** Monthly Charges, Total Charges
 
 ---
 
 ## 🔄 Project Workflow
 
-| Stage | Key Actions & Outputs |
-|-------|-----------------------|
-| **1. Data Cleaning** | Filled missing `TotalCharges` (tenure = 0) → 0, cast to numeric, mapped `SeniorCitizen` (0/1 → No/Yes) |
-| **2. Exploratory Data Analysis** | Overall churn rate = **26%**. Senior citizens churn **8 pp** more. Highest churn in month-to-month contracts and electronic check users. Tenure ≤ 3 months is a high-risk segment. |
-| **3. Pre-processing** | One-hot encoding, scaling numeric features, train/test split (80/20) |
-| **4. Modeling** | Built models: Logistic Regression, Random Forest, XGBoost |
-| **5. Evaluation** | Metrics: Accuracy, ROC-AUC, Precision, Recall, F1 Score |
-| **6. Model Explainability** | SHAP values revealed key drivers: contract type, tenure, service usage |
+| Step | Description |
+|------|-------------|
+| **1. Data Cleaning** | Handled missing values in `TotalCharges`, corrected data types, and mapped binary columns for readability |
+| **2. Exploratory Data Analysis (EDA)** | Analyzed churn distribution across multiple variables including tenure, contract type, and service usage |
+| **3. Visualization** | Created charts and graphs to visualize churn patterns and segment-wise behavior |
+| **4. Insights & Recommendations** | Derived business strategies based on EDA to help reduce churn and increase customer loyalty |
 
 ---
 
-## 🏆 Model Performance
+## 📊 Key Insights
 
-| Model | Accuracy | ROC-AUC | Precision | Recall | F1 Score |
-|-------|----------|---------|-----------|--------|----------|
-| Logistic Regression | 0.79 | 0.83 | 0.67 | 0.64 | 0.65 |
-| Random Forest | 0.80 | 0.84 | 0.69 | 0.66 | 0.67 |
-| **XGBoost** | **0.80** | **0.85** | **0.71** | **0.67** | **0.69** |
+- **Tenure Impact:** Most churn comes from users with less than 3 months of service.
+- **Contract Type:** Month-to-month contract users are more likely to churn compared to those on yearly plans.
+- **Payment Method:** Electronic check users show the highest churn rate.
+- **Service Usage:** Users without Online Security and Tech Support are more likely to leave.
+- **Senior Customers:** Senior citizens have a slightly higher churn rate and may benefit from dedicated support.
 
 ---
 
 ## 💡 Business Recommendations
 
-1. **Promote Long-Term Contracts** – Offer incentives for 1–2 year plans.
-2. **Engage Early** – Target users within first 3 months to reduce early churn.
-3. **Bundle Services** – Offer discounts on add-ons like OnlineSecurity & TechSupport.
-4. **Push for Auto-Pay** – Reduce churn by promoting automated payments over manual checks.
-5. **Support Senior Customers** – Loyalty programs and personalized support for seniors.
+1. **Offer onboarding incentives** for new users during their first 3 months.
+2. **Encourage long-term contracts** with discounts or added services.
+3. **Promote bundled services** (Online Security, Tech Support) to increase engagement.
+4. **Discourage manual payments** by nudging users toward auto-pay or card payments.
+5. **Provide personalized care** for senior customers to improve retention.
 
 ---
 
+## 🛠️ Tools Used
+
+- Python  
+- Pandas, NumPy  
+- Matplotlib, Seaborn  
+- Jupyter Notebook
+
+---
