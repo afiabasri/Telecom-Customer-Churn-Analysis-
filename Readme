@@ -1,48 +1,51 @@
-# Telco-Customer-Churn (TCA)
+# 📊 Telco Customer Churn (TCA)
 
-A complete, end-to-end data-science project that cleans raw Telco–Customer data, uncovers the behavioural patterns behind churn, and builds several machine-learning models to predict whether a customer will leave.
-
----
-
-## 📂 Dataset
-* **Rows / Cols:** 7 048 × 21
-* **Target:** `Churn` (Yes / No)
-* **Feature families**
-  - Demographics – `gender`, `SeniorCitizen`, `Partner`, `Dependents`
-  - Account ‑ `tenure`, `Contract`, `PaperlessBilling`, `PaymentMethod`
-  - Services ‑ `PhoneService`, `InternetService`, `Streaming*`, `OnlineSecurity`, …
-  - Finance ‑ `MonthlyCharges`, `TotalCharges`
+A complete end-to-end data science project analyzing Telco customer behavior to uncover churn patterns and predict customer attrition using machine learning models.
 
 ---
 
-## 🔄 Workflow
+## 📂 Dataset Overview
+
+- **Rows / Columns:** 7,048 × 21  
+- **Target Variable:** `Churn` (Yes / No)  
+- **Feature Categories:**
+  - **Demographics:** `gender`, `SeniorCitizen`, `Partner`, `Dependents`
+  - **Account Info:** `tenure`, `Contract`, `PaperlessBilling`, `PaymentMethod`
+  - **Services Used:** `PhoneService`, `InternetService`, `Streaming*`, `OnlineSecurity`, ...
+  - **Financial:** `MonthlyCharges`, `TotalCharges`
+
+---
+
+## 🔄 Project Workflow
 
 | Stage | Key Actions & Outputs |
 |-------|-----------------------|
-| **1 · Data Cleaning** | • Filled blank `TotalCharges` (tenure = 0) → 0  • Cast to numeric  • Converted `SeniorCitizen` 0/1 → No/Yes |
-| **2 · EDA** | • Overall churn = **26 %**  • Senior citizens churn **8 pp** more  • Month-to-month contracts & electronic checks show highest churn  • Short-tenure (≤ 3 mo) users at greatest risk |
-| **3 · Pre-processing** | One-hot, scaling numeric, train/test split (80 / 20) |
-| **4 · Modelling** | Logistic Regression, Random Forest, XGBoost |
-| **5 · Evaluation** | Accuracy, ROC-AUC, Confusion Matrix, Feature Importance |
-| **6 · Explainability** | SHAP values ↔ service usage, contract type, tenure |
+| **1. Data Cleaning** | Filled missing `TotalCharges` (tenure = 0) → 0, cast to numeric, mapped `SeniorCitizen` (0/1 → No/Yes) |
+| **2. Exploratory Data Analysis** | Overall churn rate = **26%**. Senior citizens churn **8 pp** more. Highest churn in month-to-month contracts and electronic check users. Tenure ≤ 3 months is a high-risk segment. |
+| **3. Pre-processing** | One-hot encoding, scaling numeric features, train/test split (80/20) |
+| **4. Modeling** | Built models: Logistic Regression, Random Forest, XGBoost |
+| **5. Evaluation** | Metrics: Accuracy, ROC-AUC, Precision, Recall, F1 Score |
+| **6. Model Explainability** | SHAP values revealed key drivers: contract type, tenure, service usage |
 
 ---
 
-## 🏆 Results
+## 🏆 Model Performance
 
-| Model | Accuracy | ROC-AUC | Precision | Recall | F1 |
-|-------|----------|---------|-----------|--------|----|
+| Model | Accuracy | ROC-AUC | Precision | Recall | F1 Score |
+|-------|----------|---------|-----------|--------|----------|
 | Logistic Regression | 0.79 | 0.83 | 0.67 | 0.64 | 0.65 |
 | Random Forest | 0.80 | 0.84 | 0.69 | 0.66 | 0.67 |
 | **XGBoost** | **0.80** | **0.85** | **0.71** | **0.67** | **0.69** |
 
 ---
 
-## 💡 Business Insights
-1. **Lock-in contracts** – incentivise 1 – 2 yr plans.
-2. **Early-life engagement** – onboard users ≤ 3 mo with perks.
-3. **Bundle add-ons** – discounts for OnlineSecurity & TechSupport.
-4. **Auto-payment push** – nudge users away from manual checks.
-5. **Senior-centric care** – loyalty rewards & dedicated support.
+## 💡 Business Recommendations
+
+1. **Promote Long-Term Contracts** – Offer incentives for 1–2 year plans.
+2. **Engage Early** – Target users within first 3 months to reduce early churn.
+3. **Bundle Services** – Offer discounts on add-ons like OnlineSecurity & TechSupport.
+4. **Push for Auto-Pay** – Reduce churn by promoting automated payments over manual checks.
+5. **Support Senior Customers** – Loyalty programs and personalized support for seniors.
 
 ---
+
